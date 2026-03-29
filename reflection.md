@@ -5,7 +5,27 @@
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+- Let a user enter basic owner + pet info
+- Generate a daily schedule/plan based on constraints and priorities
+- Display the plan clearly (and ideally explain the reasoning)
+
 - What classes did you include, and what responsibilities did you assign to each?
+- Owner
+Attributes: name, available_minutes (total time in a day)
+Responsibility: Represents the human's constraints
+- Pet
+Attributes: name, species, age
+Responsibility: Holds pet identity; could influence task defaults (e.g., a senior dog needs shorter walks)
+- Task
+Attributes: name, duration_minutes, priority (1–5), category (walk/feed/meds/etc.), preferred_time (optional: morning/afternoon/evening)
+Responsibility: A single care activity with all its metadata
+- Scheduler
+Attributes: owner, pet, tasks[]
+Methods: add_task(), generate_plan(), explain_plan()
+Responsibility: Core logic — takes tasks + constraints and produces a prioritized daily plan
+
+Relationships: Scheduler has-a Owner, has-a Pet, has-many Task
+
 
 **b. Design changes**
 
