@@ -22,6 +22,15 @@ Your final app should:
 - Display the plan clearly (and ideally explain the reasoning)
 - Include tests for the most important scheduling behaviors
 
+## Smarter Scheduling
+
+The scheduler now includes:
+
+- sorting tasks by due date and due time
+- filtering tasks by pet or completion status
+- recurring task creation for daily and weekly tasks
+- lightweight conflict detection for tasks scheduled at the same time
+
 ## Getting started
 
 ### Setup

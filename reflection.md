@@ -31,6 +31,7 @@ Relationships: Scheduler has-a Owner, has-a Pet, has-many Task
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+- Added a `scheduled_tasks` attribute and explicit return type hints to `Scheduler` so the plan lifecycle is clearer and future logic bottlenecks are reduced.
 
 ---
 
@@ -45,6 +46,7 @@ Relationships: Scheduler has-a Owner, has-a Pet, has-many Task
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+- The current scheduler detects conflicts only for exact matching due date/time stamps rather than checking overlapping duration windows, which keeps the logic light but misses partial overlaps.
 
 ---
 
